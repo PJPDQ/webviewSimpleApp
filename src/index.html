@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Vanilla JS Version</title>
+		<link rel="stylesheet" href="js/leaflet/leaflet.css" />
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		
+		<div id="app">
+		
+			<nav id="tab-bar">
+				<a href="#music-map">Music Map</a>
+				<a href="#now-playing">Now Playing</a>
+				<a href="#sampler">Sampler</a>
+			</nav>
+	
+			<main id="content">
+			
+				<section id="music-map">
+					
+					<section id="music-map-embed">
+						<section id="leaflet-map">
+							
+						</section>
+					</section>
+			
+				</section>
+				
+				<section id="now-playing">
+				
+					<section id="now-playing-empty">
+						<p>Now Playing Empty 🔺</p>
+					</section>
+				
+					<section id="now-playing-insert">
+						<p>Now Playing Insert 🔺</p>
+						<h2>Composition Title</h2>
+						<button id="now-playing-play-composition-button">Play Composition 🔈</button>
+						<ul id="now-playing-samples"></ul>
+						<button id="now-playing-insert-button">Insert At Beginning of Composition</button>
+					</section>
+				
+				</section>
+				
+				<section id="sampler">
+				
+					<section id="sampler-menu">
+						<h2>Sampler: Menu 🍔</h2>
+						<nav>
+							<a href="#sampler/piano">Piano</a>
+							<a href="#sampler/drums">Drums</a>
+							<a href="#sampler/theremin">Theremin</a>
+							<a href="#sampler/microphone">Microphone</a>
+						</nav>
+					</section>
+					
+					<section id="sampler-piano">
+						<h2>Sampler: Piano 🎹</h2>
+						<ul class="sampler-key-buttons">
+							<li>1</li>
+							<li>2</li>
+							<li>3</li>
+							<li>4</li>
+							<li>5</li>
+							<li>6</li>
+							<li>7</li>
+							<li>8</li>
+						</ul>
+						<button class="sampler-recording-button" style="font-weight: bold;">Start Recording</button>
+						<button class="sampler-playback-button">Start Playback</button>
+						<button class="sampler-save-button">Save</button>
+					</section>
+					
+					<section id="sampler-drums">
+						<h2>Sampler: Drums 🥁</h2>
+						<ul class="sampler-key-buttons">
+							<li>1</li>
+							<li>2</li>
+							<li>3</li>
+							<li>4</li>
+							<li>5</li>
+							<li>6</li>
+							<li>7</li>
+							<li>8</li>
+						</ul>
+						<button class="sampler-recording-button" style="font-weight: bold;">Start Recording</button>
+						<button class="sampler-playback-button">Start Playback</button>
+						<button class="sampler-save-button">Save</button>
+					</section>
+					
+					<section id="sampler-microphone">
+						<h2>Sampler: Microphone 🎤</h2>
+						<!--<button class="sampler-toggle-microphone">Enable Microphone</button>
+						<button class="sampler-recording-button" style="font-weight: bold;">Start Recording</button>
+						<button class="sampler-playback-button">Start Playback</button>
+						<button class="sampler-save-button">Save</button>-->
+					</section>
+					
+					<section id="sampler-theremin">
+						<h2>Sampler Theremin 🌊</h2>
+						<input type="range" min="200" max="800" value="400" class="sampler-slider">
+						<button class="sampler-recording-button" style="font-weight: bold;">Start Recording</button>
+						<button class="sampler-playback-button">Start Playback</button>
+						<button class="sampler-save-button">Save</button>
+					</section>
+					
+				</section>
+				
+			</main>
+		
+		</div>
+		
+		<script src="js/Tone.js"></script>
+		<script src="js/leaflet/leaflet.js"></script>
+		<script src="js/script.js"></script>
+		
+	</body>
+</html>

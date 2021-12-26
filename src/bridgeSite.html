@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h2>Javascript alert </h2>
+        <button onclick="myFunction()">TryIt</button>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.0.1/Tone.min.js"></script> -->
+        <script src="js/Tone.js"></script>
+        <script src="js/script.js"></script>
+        <script>
+            function myFunction() {
+                // alert("hello world");
+                const player = new Tone.Player({
+                    url: "https://tonejs.github.io/audio/drum-samples/loops/ominous.mp3",
+                    autostart: true,
+                });
+                const filter = new Tone.Filter(400, 'lowpass').toDestination();
+                const feedbackDelay = new Tone.FeedbackDelay(0.125, 0.5).toDestination();
+
+                // connect the player to the feedback delay and filter in parallel
+                player.connect(filter);
+                player.connect(feedbackDelay);
+                alert("hello there");
+            }
+        </script>
+    </body>
+</html>
