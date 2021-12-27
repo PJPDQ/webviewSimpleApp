@@ -4,25 +4,38 @@
     <head>
     </head>
     <body>
-        <h2>Javascript alert </h2>
-        <button onclick="myFunction()">TryIt</button>
+        <h2>BASIC WEBVIEW TONEJS INTEGRATION </h2>
         <script src="js/Tone.js"></script> <!--from vanillajs tonejs-->
-        <!-- <script src="js/script.js"></script> -->
         <script>
-            function myFunction() {
-                // alert("hello world");
-                const player = new Tone.Player({
-                    url: "https://tonejs.github.io/audio/drum-samples/loops/ominous.mp3",
-                    autostart: true,
-                });
-                const filter = new Tone.Filter(400, 'lowpass').toDestination();
-                const feedbackDelay = new Tone.FeedbackDelay(0.125, 0.5).toDestination();
+            (function() {
+                document.addEventListener('message', function(msg) {
+                    var song = msg.data;
+                    const player = new Tone.Player({
+                        url: song,
+                        autostart: true,
+                    });
+                    const filter = new Tone.Filter(400, 'lowpass').toDestination();
+                    const feedbackDelay = new Tone.FeedbackDelay(0.125, 0.5).toDestination();
 
-                // connect the player to the feedback delay and filter in parallel
-                player.connect(filter);
-                player.connect(feedbackDelay);
-                alert("hello there");
-            }
+                    // connect the player to the feedback delay and filter in parallel
+                    player.connect(filter);
+                    player.connect(feedbackDelay);
+                })
+            })()
+            // function myFunction() {
+            //     // alert("hello world");
+            //     const player = new Tone.Player({
+            //         url: "https://tonejs.github.io/audio/drum-samples/loops/ominous.mp3",
+            //         autostart: true,
+            //     });
+                // const filter = new Tone.Filter(400, 'lowpass').toDestination();
+                // const feedbackDelay = new Tone.FeedbackDelay(0.125, 0.5).toDestination();
+
+                // // connect the player to the feedback delay and filter in parallel
+                // player.connect(filter);
+                // player.connect(feedbackDelay);
+            //     alert("hello there");
+            // }
         </script>
     </body>
 </html>

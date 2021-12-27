@@ -1,0 +1,39 @@
+{
+    "coordinates": [ 
+        {
+            "id": 1,
+            "title": "sound1",
+            "url": "https://tonejs.github.io/audio/drum-samples/loops/coolloop7.mp3"
+        },
+        {
+            "id": 2,
+            "title": "sound2",
+            "url": "https://tonejs.github.io/audio/drum-samples/loops/blueyellow.mp3"
+        },
+        {
+            "id": 3,
+            "title": "sound3",
+            "url": "https://tonejs.github.io/audio/drum-samples/loops/break12.mp3"
+        },
+        {
+            "id": 4,
+            "title": "sound4",
+            "url": "https://tonejs.github.io/audio/drum-samples/loops/break28.mp3"
+        },
+        {
+            "id": 5,
+            "title": "sound5",
+            "url": "https://tonejs.github.io/audio/drum-samples/loops/break29.mp3"
+        },
+        {
+            "id": 6,
+            "title": "sound6",
+            "url": "https://tonejs.github.io/audio/drum-samples/loops/organ-echo-chords.mp3"
+        },
+        {
+            "id": 7,
+            "title": "sound7",
+            "url": "https://tonejs.github.io/audio/drum-samples/loops/ominous.mp3"
+        }
+    ]
+}
