@@ -7,20 +7,34 @@
         <h2>BASIC WEBVIEW TONEJS INTEGRATION </h2>
         <script src="js/Tone.js"></script> <!--from vanillajs tonejs-->
         <script>
+            var status;
+            function sendInfoToReactNative(status) {
+                window.ReactNativeWebView.postMessage(status);
+            }
             (function() {
                 document.addEventListener('message', function(msg) {
-                    var song = msg.data;
-                    const player = new Tone.Player({
-                        url: song,
-                        autostart: true,
-                    });
-                    const filter = new Tone.Filter(400, 'lowpass').toDestination();
-                    const feedbackDelay = new Tone.FeedbackDelay(0.125, 0.5).toDestination();
+                    let data = msg.data.split(" ");                    
+                    if (data[1] === "true") {
+                        const player = new Tone.Player({
+                            url: data[0],
+                            autostart: true,
+                        });
 
-                    // connect the player to the feedback delay and filter in parallel
-                    player.connect(filter);
-                    player.connect(feedbackDelay);
-                })
+                        const filter = new Tone.Filter(400, 'lowpass').toDestination();
+                        const feedbackDelay = new Tone.FeedbackDelay(0.125, 0.5).toDestination();
+                        // connect the player to the feedback delay and filter in parallel
+                        player.connect(filter);
+                        player.connect(feedbackDelay);
+                        Tone.Transport.start();
+                        status = true;
+                        sendInfoToReactNative(status)
+                    } else {
+                        Tone.Transport.pause();
+                        status = false;
+                        sendInfoToReactNative(status);
+                    }
+                    
+                })  
             })()
             // function myFunction() {
             //     // alert("hello world");
